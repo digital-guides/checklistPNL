@@ -119,5 +119,14 @@ export const initialTasks: ChecklistTask[] = [
     dueDate: "",
     status: "Pending",
     notes: ""
+  },
+  {
+    id: 13,
+    title: "Aplicar la Matriz de Eisenhower para priorizar",
+    description: "Clasificar tareas como Importante/Urgente antes de actuar.",
+    priority: "none",
+    dueDate: "",
+    status: "Pending",
+    notes: ""
   }
 ];
