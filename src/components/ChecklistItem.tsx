@@ -65,7 +65,7 @@ export const ChecklistItem = ({ task, onUpdate, onToggleStatus }: ChecklistItemP
             )}>
               {task.title}
             </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-primary font-medium text-base leading-relaxed">
               {task.description}
             </p>
           </div>
