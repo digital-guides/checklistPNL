@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
+import { MobileSelect } from '@/components/MobileSelect';
 import { cn } from '@/lib/utils';
 
 interface ChecklistItemProps {
@@ -21,8 +22,23 @@ const priorityColors = {
   'none': 'bg-muted text-muted-foreground'
 };
 
+const priorityOptions = [
+  { value: 'none', label: 'Sin prioridad' },
+  { value: 'Alta', label: 'Alta' },
+  { value: 'Media', label: 'Media' },
+  { value: 'Baja', label: 'Baja' }
+];
+
+// Hook to detect mobile devices
+const useIsMobile = () => {
+  const isMobile = typeof window !== 'undefined' && 
+    (window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+  return isMobile;
+};
+
 export const ChecklistItem = ({ task, onUpdate, onToggleStatus }: ChecklistItemProps) => {
   const isCompleted = task.status === 'Done';
+  const isMobile = useIsMobile();
 
   return (
     <Card className={cn(
@@ -76,20 +92,29 @@ export const ChecklistItem = ({ task, onUpdate, onToggleStatus }: ChecklistItemP
                 <AlertTriangle className="h-4 w-4" />
                 Prioridad
               </label>
-              <Select
-                value={task.priority}
-                onValueChange={(value: Priority) => onUpdate(task.id, { priority: value })}
-              >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Seleccionar prioridad" />
-                </SelectTrigger>
-                <SelectContent align="start" side="bottom">
-                  <SelectItem value="none">Sin prioridad</SelectItem>
-                  <SelectItem value="Alta">Alta</SelectItem>
-                  <SelectItem value="Media">Media</SelectItem>
-                  <SelectItem value="Baja">Baja</SelectItem>
-                </SelectContent>
-              </Select>
+              {isMobile ? (
+                <MobileSelect
+                  value={task.priority}
+                  onValueChange={(value: Priority) => onUpdate(task.id, { priority: value })}
+                  placeholder="Seleccionar prioridad"
+                  options={priorityOptions}
+                />
+              ) : (
+                <Select
+                  value={task.priority}
+                  onValueChange={(value: Priority) => onUpdate(task.id, { priority: value })}
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Seleccionar prioridad" />
+                  </SelectTrigger>
+                  <SelectContent align="start" side="bottom">
+                    <SelectItem value="none">Sin prioridad</SelectItem>
+                    <SelectItem value="Alta">Alta</SelectItem>
+                    <SelectItem value="Media">Media</SelectItem>
+                    <SelectItem value="Baja">Baja</SelectItem>
+                  </SelectContent>
+                </Select>
+              )}
             </div>
 
             <div className="space-y-2">
