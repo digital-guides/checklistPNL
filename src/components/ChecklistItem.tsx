@@ -80,10 +80,10 @@ export const ChecklistItem = ({ task, onUpdate, onToggleStatus }: ChecklistItemP
                 value={task.priority}
                 onValueChange={(value: Priority) => onUpdate(task.id, { priority: value })}
               >
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Seleccionar prioridad" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent align="start" side="bottom">
                   <SelectItem value="none">Sin prioridad</SelectItem>
                   <SelectItem value="Alta">Alta</SelectItem>
                   <SelectItem value="Media">Media</SelectItem>
