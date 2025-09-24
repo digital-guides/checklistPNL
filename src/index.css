@@ -127,5 +127,15 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Mobile dropdown fixes */
+  [data-radix-select-content] {
+    position: fixed !important;
+    z-index: 99999 !important;
+    background: hsl(var(--popover)) !important;
+    color: hsl(var(--popover-foreground)) !important;
   }
 }
