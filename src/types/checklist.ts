@@ -1,5 +1,5 @@
 export type TaskStatus = 'Pending' | 'Done';
-export type Priority = 'Alta' | 'Media' | 'Baja' | '';
+export type Priority = 'Alta' | 'Media' | 'Baja' | 'none';
 
 export interface ChecklistTask {
   id: number;
@@ -16,7 +16,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 1,
     title: "Revisar y anotar el propósito del puesto / motivo del emprendimiento",
     description: "Revisar perfil de cargo u objetivos y resumir 3 metas trimestrales.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -25,7 +25,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 2,
     title: "Negociar condiciones al recibir tarea nueva",
     description: "Solicitar tiempos, condiciones y cómo afecta carga actual; dejar por escrito.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -34,7 +34,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 3,
     title: "Dejar TODO por escrito",
     description: "Registrar solicitudes, acuerdos y confirmaciones por email o documento compartido.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -43,7 +43,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 4,
     title: "Revisar canales organizacionales a primera hora",
     description: "Verificar correo institucional y grupos de mensajería para novedades urgentes.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -52,7 +52,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 5,
     title: "Mantener el sitio de trabajo limpio y ordenado",
     description: "Asignar un lugar para cada cosa y despejar el área de trabajo.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -61,7 +61,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 6,
     title: "Planificación diaria visible",
     description: "Colocar pizarra o nota en pantalla con prioridades del día.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -70,7 +70,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 7,
     title: "Ordenar y respaldar archivos físicos y digitales",
     description: "Clasificación y copias de seguridad periódicas.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -79,7 +79,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 8,
     title: "Hablar directamente con la persona involucrada ante dudas o conflictos",
     description: "Solicitar aclaraciones y resolver en privado y con respeto.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -88,7 +88,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 9,
     title: "Evitar juicios y comentarios dañinos",
     description: "Ceñirse a hechos, no alimentar rumores.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -97,7 +97,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 10,
     title: "Comunicar tus logros relevantes",
     description: "Informar resultados clave a superiores con evidencia y humildad.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -106,7 +106,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 11,
     title: "Ser humano antes que profesional",
     description: "Practicar empatía, cooperación y sinergia en el equipo.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""
@@ -115,7 +115,7 @@ export const initialTasks: ChecklistTask[] = [
     id: 12,
     title: "Corroborar y aclarar rumores o comentarios tóxicos",
     description: "Investigar origen y buscar la aclaración directa con las partes.",
-    priority: "",
+    priority: "none",
     dueDate: "",
     status: "Pending",
     notes: ""

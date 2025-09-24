@@ -18,7 +18,7 @@ const priorityColors = {
   'Alta': 'bg-destructive text-destructive-foreground',
   'Media': 'bg-warning text-warning-foreground',
   'Baja': 'bg-success text-success-foreground',
-  '': 'bg-muted text-muted-foreground'
+  'none': 'bg-muted text-muted-foreground'
 };
 
 export const ChecklistItem = ({ task, onUpdate, onToggleStatus }: ChecklistItemProps) => {
@@ -53,7 +53,7 @@ export const ChecklistItem = ({ task, onUpdate, onToggleStatus }: ChecklistItemP
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium text-muted-foreground">#{task.id}</span>
-              {task.priority && (
+              {task.priority !== 'none' && (
                 <Badge className={priorityColors[task.priority as Priority]}>
                   {task.priority}
                 </Badge>
@@ -84,7 +84,7 @@ export const ChecklistItem = ({ task, onUpdate, onToggleStatus }: ChecklistItemP
                   <SelectValue placeholder="Seleccionar prioridad" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">Sin prioridad</SelectItem>
+                  <SelectItem value="none">Sin prioridad</SelectItem>
                   <SelectItem value="Alta">Alta</SelectItem>
                   <SelectItem value="Media">Media</SelectItem>
                   <SelectItem value="Baja">Baja</SelectItem>
