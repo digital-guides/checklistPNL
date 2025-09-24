@@ -28,6 +28,9 @@ export const ChecklistHeader = ({
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Checklist profesional para optimizar tu rendimiento y productividad en el trabajo
         </p>
+        <p className="text-muted-foreground text-sm italic">
+          Elaborado por MSc. María Auxiliadora Vielma
+        </p>
       </div>
 
       <Card className="p-6 bg-gradient-card">

@@ -2,6 +2,7 @@ import { useChecklist } from '@/hooks/useChecklist';
 import { ChecklistHeader } from './ChecklistHeader';
 import { ChecklistItem } from './ChecklistItem';
 import { useToast } from '@/hooks/use-toast';
+import logo from '@/assets/logo77.png';
 
 export const ChecklistApp = () => {
   const { 
@@ -41,6 +42,13 @@ export const ChecklistApp = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
+        <div className="text-center mb-6">
+          <img 
+            src={logo} 
+            alt="Desbloquea Tu Potencial Profesional" 
+            className="mx-auto h-20 w-auto"
+          />
+        </div>
         <ChecklistHeader
           completedCount={completedCount}
           totalCount={totalCount}
